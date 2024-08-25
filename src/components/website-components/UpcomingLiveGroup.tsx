@@ -12,7 +12,7 @@ const UpcomingLiveGroup = () => {
     const upcomingOffering = offering?.allUpcomingLiveClasses?.offerings;
 
       const fetchData = useCallback(async () => {
-        await dispatch(getAllUpcomingLG({page:1,pageSize:20}));
+        await dispatch(getAllUpcomingLG({page:0,pageSize:20}));
        
         setLoading(false);
       }, []);

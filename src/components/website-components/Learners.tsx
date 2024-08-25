@@ -45,8 +45,7 @@ const Learners = () => {
                   language and culture, and develop the necessary abilities for
                   proficient communication in both written and spoken Spanish.
                   Whether you’re just starting or already an intermediate
-                  learner, this course is a valuable investment in your language
-                  proficiency. Don’t delay – enroll today!”
+                  learner,  Don’t delay – enroll today!”
                 </p>
                 <div className="mt-6 rounded-[100px] bg-white w-fit px-2 h-[33px] gap-3 flex items-center  ">
                   <span>
