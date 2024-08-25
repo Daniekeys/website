@@ -1,4 +1,4 @@
-import { act, useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ClassDetails } from "../../util/types";
 import pic from "../../assets/png/face-woman.png";
 import {
@@ -10,15 +10,13 @@ import {
   YellowCap,
 } from "../../assets";
 import ReUseModal from "../modal/Modal";
+import { FaShareAlt } from "react-icons/fa";
 
-import { DateTimeInput, Input } from "../Input";
+import { Input } from "../Input";
 import { store } from "../../app/store";
 import toast from "react-hot-toast";
-import { resetRedirect, saveRedirectUrl } from "../../features/auth/authSlice";
 import {
-  bookCoachOffering,
   bookLiveGroupOffering,
-  getAvailability,
  
 } from "../../features/offeringslice";
 import { restoreDefault } from "../../features/paymentslice";
@@ -26,24 +24,35 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "../Button";
 import { payForOffering } from "../../features/paymentslice";
+import facebook from "../../assets/icons/facebook.png";
+import instagram from "../../assets/icons/instagram.png";
+import twitter from "../../assets/icons/twitter.png";
+import linkedin from "../../assets/icons/linkedin.png";
+import whatsapp from "../../assets/icons/whatsapp.png";
+import { IoCopyOutline } from "react-icons/io5";
 const LiveOfferingCard = ({ item }: { item: ClassDetails }) => {
-  const authenticated = store.getState().auth?.token;
-  const userPic = pic;
+
+    const url = `https://my-lang-website-daniekeys-projects.vercel.app/view-livegroup?slugURL=${item?.slug}`;
+    const text = "Check out this awesome page!";
+
+    const handleShare = (shareUrl: string) => {
+      window.open(shareUrl, "_blank", "noopener,noreferrer");
+    };
   const handleError = (e: any) => {
     e.target.onerror = null; // Prevent looping
     e.target.src = pic;
   };
   const urlId = useParams();
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-  const offering = useAppSelector((state) => state.offerings);
+
    const payment = useAppSelector((state) => state.payment);
   const [loading, setLoading] = useState<boolean>(false);
 
   const [open, setOpen] = useState<boolean>(false);
-  const [successData, setSuccessData] = useState<any>({});
+
 
   const [openLive, setOpenLive] = useState(false);
+  const [openShare, setOpenShare] = useState(false);
 
   const [note, setNote] = useState("");
   const [email, setEmail] = useState("");
@@ -80,7 +89,7 @@ const LiveOfferingCard = ({ item }: { item: ClassDetails }) => {
               paymentMethod: "TRANSFER",
               email: email,
             };
-            console.log({data})
+           
                  dispatch(payForOffering(data));
                };
           
@@ -127,24 +136,17 @@ useEffect(() => {
     <div
       className="w-full flex flex-col offering-shadow rounded-md cursor-pointer"
       key={item?.id}
-      onClick={() => {
-        if (item?.type === "ONE_TIME") {
-          setOpen(true);
-        }
-        if (item?.type === "ONE_MONTHLY" && item?.seriesCount === 1) {
-          setOpen(true);
-        }
-      
-        if (item?.type === "LIVE_GROUP") {
-          setOpenLive(true);
-        }
-      }}
     >
       <img
         src={item?.coverImageUrl}
         onError={handleError}
         alt=""
         className=" rounded-md w-full h-[240px] object-cover "
+        onClick={() => {
+          if (item?.type === "LIVE_GROUP") {
+            setOpenLive(true);
+          }
+        }}
       />
       <div className="flex flex-col p-[18px] bg-white ">
         <h1 className="font-bold text-lg red-hat capitalize">{item?.title}</h1>
@@ -173,7 +175,7 @@ useEffect(() => {
           </span>
         </div>
 
-        <div className="w-full flex items-center gap-4 mt-6 border-t  border-t-border pt-3">
+        <div className="w-full flex items-center gap-4 mt-6  pt-3">
           <div className="flex gap-3  items-center">
             <span>
               <DollarIcon />
@@ -198,13 +200,117 @@ useEffect(() => {
             <p className="text-muted font-medium dm-sams">Video Call</p>
           </div>
         </div>
+        <div className="w-full grid grid-cols-2 gap-4 mt-6">
+          <button
+            className="bg-black text-white red-hat h-[37px] flex items-center justify-center w-full cursor-pointer rounded-[4px] "
+            onClick={() => {
+              setOpenLive(true);
+            }}
+          >
+            Join Class
+          </button>
+          <button
+            className="bg-primary text-white red-hat h-[37px] flex items-center justify-center w-full rounded-[4px] "
+            onClick={() => {
+              setOpenShare(true);
+            }}
+          >
+            Share{" "}
+            <span className="ml-1">
+              <FaShareAlt />
+            </span>
+          </button>
+        </div>
       </div>
-      <ReUseModal
-        open={open}
-        setOpen={setOpen}
-        width="sm:max-w-[630px] sm:w-full"
-      >
-      
+      <ReUseModal open={openShare} setOpen={setOpenShare}>
+        <div className="w-full flex flex-col">
+          <div className="flex justify-between items-center">
+            <p className="red-hat text-black text text-lg font-bold md:text-xl xl:text-2xl ">
+              Copy and share link{" "}
+            </p>
+            <button
+              className="cursor-pointer"
+              onClick={() => setOpenShare(false)}
+            >
+              <CancelX />
+            </button>
+          </div>
+          <div className="w-full mt-8 flex flex-col">
+            <p className="text-muted text-sm">Share this link via</p>
+            <div className="flex items-center gap-6 flex-wrap mt-3">
+              <button
+                onClick={() =>
+                  handleShare(
+                    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                      url
+                    )}`
+                  )
+                }
+              >
+                <img src={facebook} alt="facebook" className="w-10 h-10" />
+              </button>
+
+              {/* X (Twitter) Share Button */}
+              <button
+                onClick={() =>
+                  handleShare(
+                    `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+                      url
+                    )}&text=${encodeURIComponent(text)}`
+                  )
+                }
+              >
+                <img src={twitter} alt="facebook" className="w-10 h-10" />
+              </button>
+
+              {/* LinkedIn Share Button */}
+              <button
+                onClick={() =>
+                  handleShare(
+                    `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                      url
+                    )}`
+                  )
+                }
+              >
+                <img src={linkedin} alt="facebook" className="w-10 h-10" />
+              </button>
+
+              {/* WhatsApp Share Button */}
+              <button
+                onClick={() =>
+                  handleShare(
+                    `https://wa.me/?text=${encodeURIComponent(
+                      text
+                    )}%20${encodeURIComponent(url)}`
+                  )
+                }
+              >
+                <img src={whatsapp} alt="facebook" className="w-10 h-10" />
+              </button>
+
+              {/* Instagram Share Button - Note: No direct share functionality */}
+              <button onClick={() => navigator.clipboard.writeText(url)}>
+                <img src={instagram} alt="facebook" className="w-10 h-10" />
+              </button>
+            </div>
+            <p className="mt-6 text-muted red-hat text-sm ">or copy link</p>
+            <div className="flex h-12 items-center bg-[#F0F5FC] rounded-[12px] justify-between ">
+              <div className="flex gap-2 items-center w-2/3 pl-2">
+                <span className="text-black">
+                  <IoCopyOutline />
+                </span>
+                <p className="text-black truncate ">{url}</p>
+              </div>
+              <button
+                className=" w-fit bg-black rounded-[12px] px-4 h-12 flex items-center justify-center font-medium text-white "
+                onClick={() => { navigator.clipboard.writeText(url); toast.success("Copied to clipboard") }}
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
       </ReUseModal>
       <ReUseModal open={openLive} setOpen={setOpenLive}>
         <div className="w-full flex flex-col min-w-[300px] lg:min-w-max">
@@ -247,7 +353,6 @@ useEffect(() => {
           </div>
         </div>
       </ReUseModal>
-     
     </div>
   );
 };
