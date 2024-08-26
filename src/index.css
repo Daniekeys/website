@@ -128,3 +128,16 @@ filter: blur(40px);
   box-shadow: 2px 2px 12px 0px #0000001A;
 
 }
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blinker {
+  animation: blink 1s step-end infinite;
+}

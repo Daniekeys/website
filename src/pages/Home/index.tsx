@@ -7,10 +7,14 @@ import Become from '../../components/website-components/Become'
 import Footer from '../../components/website-components/Footer'
 import UpcomingLiveGroup from '../../components/website-components/UpcomingLiveGroup'
 import Learners from '../../components/website-components/Learners'
+import Navbar from '../../components/website-components/Navbar'
+import Hero from '../../components/website-components/Hero'
 
 const Home = () => {
   return (
     <div className='w-full flex flex-col '>
+      <Navbar />
+      <Hero />
       <UpcomingLiveGroup />
       <Features />
       <Stats />
