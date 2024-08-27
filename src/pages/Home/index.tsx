@@ -9,11 +9,13 @@ import UpcomingLiveGroup from '../../components/website-components/UpcomingLiveG
 import Learners from '../../components/website-components/Learners'
 import Navbar from '../../components/website-components/Navbar'
 import Hero from '../../components/website-components/Hero'
+import MobileNav from '../../components/website-components/mobile-nav'
 
 const Home = () => {
   return (
-    <div className='w-full flex flex-col '>
+    <div className='w-full flex flex-col relative '>
       <Navbar />
+      <MobileNav />
       <Hero />
       <UpcomingLiveGroup />
       <Features />

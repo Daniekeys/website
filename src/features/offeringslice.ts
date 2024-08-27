@@ -338,6 +338,8 @@ export const offeringsSlice = createSlice({
       .addCase(bookLiveGroupOffering.rejected, (state) => {
         state.loading = false;
       })
+
+      
         
         ;
   },

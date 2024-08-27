@@ -20,7 +20,7 @@ const UpcomingLiveGroup = () => {
       useEffect(() => {
         fetchData();
       }, []);
-   
+   console.log(upcomingOffering)
     
   return (
     <div className="w-full py-16 2xl:py-[100px] bg-white ">

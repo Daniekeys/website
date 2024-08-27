@@ -11,6 +11,7 @@ interface selectProps {
   name?: string;
   height?: string;
   mapKey?: any;
+  listHeight?: string;
 }
 
 function classNames(...classes: any) {
@@ -24,7 +25,7 @@ export default function PrimarySelect({
   data,
   name,
   height,
-  mapKey
+  mapKey,listHeight
 }: selectProps) {
   // const [selected, setSelected] = useState(people[3])
 
@@ -38,7 +39,7 @@ export default function PrimarySelect({
           <div className="mt-1 relative w-full">
             <Listbox.Button
               className={`${
-              height ? height : "h-[36px] bg-white"
+                height ? height : "h-[36px] bg-white"
               } relative w-full  border  border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-[#E4E4E7] focus:border-[#E4E4E7] sm:text-sm`}
             >
               <span className="block truncate capitalize text-black">
@@ -59,14 +60,16 @@ export default function PrimarySelect({
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Listbox.Options className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
+              <Listbox.Options
+                className={`absolute z-10 mt-1 w-full bg-white shadow-lg ${listHeight ?? "max-h-60"}  rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm`}
+              >
                 {data?.map((person: any, index: number) => (
                   <Listbox.Option
                     key={index}
                     className={({ active }) =>
                       classNames(
                         active
-                          ? "text-[#0e0e0e] bg-[#EBF6D4]"
+                          ? "text-[#0e0e0e] bg-[#F0F5FC]"
                           : "text-gray-900",
                         "cursor-default select-none relative py-2 pl-8 pr-4"
                       )

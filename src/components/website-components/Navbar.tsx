@@ -1,14 +1,17 @@
-import React from 'react'
+import {useState} from 'react'
 import ContainerLayout from '../../layouts/ContainerLayout'
 import logo from "../../assets/icons/lang-logo.svg";
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
+  const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
   return (
-    <div>
+    <div className='w-full'>
       <ContainerLayout>
         <div className="w-full lg:flex items-center justify-between mt-6 mb-6 bg-white hidden ">
           <span>
-            <img src={logo} alt="logo" className="w-[140px] h-auto" />
+            <img src={logo} alt="logo" className="w-[140px] h-auto" onClick={() => navigate("/")} />
           </span>
           <div className="w-auto flex items-center gap-6 ">
             <span>

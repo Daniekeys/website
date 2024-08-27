@@ -112,6 +112,8 @@ export interface ClassDetails {
   duration: number;
   isFree: boolean;
   slug?: string;
+  coachName?: string;
+  languageTag?: string;
   cost: {
     amount: number;
     currency: string;

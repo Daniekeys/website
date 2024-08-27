@@ -5,7 +5,10 @@ import {
   BlueTimeIcon,
   BlueVideoIcon,
   CancelX,
+  CapIcon,
   DollarIcon,
+  UsersIcon,
+  VerifyIcon,
   YellowCalender,
   YellowCap,
 } from "../../assets";
@@ -13,7 +16,7 @@ import ReUseModal from "../modal/Modal";
 import { FaShareAlt } from "react-icons/fa";
 
 import { Input } from "../Input";
-import { store } from "../../app/store";
+import ar from "../../assets/png/ar.png";
 import toast from "react-hot-toast";
 import {
   bookLiveGroupOffering,
@@ -149,7 +152,23 @@ useEffect(() => {
         }}
       />
       <div className="flex flex-col p-[18px] bg-white ">
-        <h1 className="font-bold text-lg red-hat capitalize">{item?.title}</h1>
+        <h1 className="font-bold text-xl red-hat capitalize">{item?.title}</h1>
+        <div className="flex gap-3 items-center mt-2">
+          <span>
+            <img
+              src={item?.coverImageUrl}
+              alt=""
+              className="w-6 h-6 rounded-full"
+            />
+          </span>
+          <h1 className="text-sm lg:text-base font-medium red-hat capitalize truncate">
+            {item?.coachName}
+          </h1>
+          <img src={ar} alt="ar" />
+          <span>
+            <VerifyIcon />
+          </span>
+        </div>
         <p className="text-base red-hat mt-6">{item?.description}</p>
         {/* <p className="text-base red-hat mt-6">
           {item?.type === "LIVE_GROUP" && "LIVE GROUP"}
@@ -157,7 +176,7 @@ useEffect(() => {
           {item?.type === "ONE_TIME" && "ONE TIME"}
         </p> */}
 
-        <div className="w-full flex items-center mt-6 justify-between">
+        {/* <div className="w-full flex items-center mt-6 justify-between">
           <span className="flex items-center gap-2">
             <YellowCap />
             <p className="text-muted dm-sans ">
@@ -173,9 +192,34 @@ useEffect(() => {
               {item?.type === "ONE_TIME" && "ONE TIME"}
             </p>
           </span>
+        </div> */}
+        <div className="flex items-center gap-[6px] mt-6">
+          <span>
+            <CapIcon />
+          </span>
+          <p className="text-muted  text-sm">{item?.languageTag}</p>
         </div>
+        <div className="gap-4 flex items-center mt-3 ">
+          <div className="flex items-center gap-[6px]">
+            <span>
+              <UsersIcon />
+            </span>
+            <p className="text-muted  text-sm">
+              {item?.numOfAttendees} Attendees
+            </p>
+          </div>
 
-        <div className="w-full flex items-center gap-4 mt-6  pt-3">
+          <div className="flex items-center gap-[6px] ">
+            <span className="bg-muted w-[5px] h-[5px] rounded-full"></span>
+            <p className="text-muted  text-sm">
+              {item?.registeredAttendeesCount} registered attendees
+            </p>
+          </div>
+        </div>
+        <p className="text-lg sm:text-xl xl:text-2xl font-bold red-hat mt-6">
+          {item?.isFree ? "FREE" : item?.cost?.amount}
+        </p>
+        {/* <div className="w-full flex items-center gap-4 mt-6  pt-3">
           <div className="flex gap-3  items-center">
             <span>
               <DollarIcon />
@@ -199,7 +243,7 @@ useEffect(() => {
             </span>
             <p className="text-muted font-medium dm-sams">Video Call</p>
           </div>
-        </div>
+        </div> */}
         <div className="w-full grid grid-cols-2 gap-4 mt-6">
           <button
             className="bg-black text-white red-hat h-[37px] flex items-center justify-center w-full cursor-pointer rounded-[4px] "
@@ -304,7 +348,10 @@ useEffect(() => {
               </div>
               <button
                 className=" w-fit bg-black rounded-[12px] px-4 h-12 flex items-center justify-center font-medium text-white "
-                onClick={() => { navigator.clipboard.writeText(url); toast.success("Copied to clipboard") }}
+                onClick={() => {
+                  navigator.clipboard.writeText(url);
+                  toast.success("Copied to clipboard");
+                }}
               >
                 Copy
               </button>

@@ -30,7 +30,7 @@ export const url = {
   respondToReschedule: "/reschedules",
   availability:"/bookings/availability",
   upLiveComingGroup:"/offerings/upcoming-live-group",
-  getSingleLg: "/offerings/upcoming-live-group",
+  getSingleLg: "/offerings/lg",
   bookLiveGroup:"/bookings/public/lg"
   
 };

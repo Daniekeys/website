@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home/";
 import NotFound from "./pages/Error/NotFound";
-
+import ViewLiveGroup from "./pages/view-group";
 const AppRoutes = () => {
   return (
     <BrowserRouter>
@@ -14,6 +14,14 @@ const AppRoutes = () => {
           element={
            
               <Home />
+            
+          }
+        />
+        <Route
+          path="/view-livegroup"
+          element={
+           
+              <ViewLiveGroup />
             
           }
         />

@@ -11,7 +11,9 @@
 
 
 
-
+.z-modal{
+  z-index: 5555 !important;
+}
 
 *{
   
@@ -126,6 +128,10 @@ filter: blur(40px);
 
 .feat-shadow{
   box-shadow: 2px 2px 12px 0px #0000001A;
+
+}
+.search-shadow{
+  box-shadow: 1px 1px 16px 0px #0000001A;
 
 }
 
