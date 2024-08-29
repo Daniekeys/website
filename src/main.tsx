@@ -6,7 +6,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import App from "./App";
 import { persistor, store } from "./app/store";
 import "./index.css";
-
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 
 const container = document.getElementById("root");

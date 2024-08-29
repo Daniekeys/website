@@ -115,18 +115,18 @@ const ViewSingleLiveGroup = () => {
   
   if (fetchLoading) {
     return (
-      <div className="mt-6 w-full">
+      <div className=" w-full mt-24">
         <LoadingComponent />
       </div>
     );
   }
   return (
-    <div className="w-full ">
+    <div className="w-full mt-20  ">
       <ContainerLayout>
         <div className="w-full flex flex-col">
           {/* start of hero */}
           <div
-            className="w-full h-screen lg:h-[555px] flex flex-col justify-center lg:pl-12 pl-4 "
+            className="w-full h-screen lg:h-[555px] flex flex-col justify-center  lg:pl-12 pl-4 "
             style={{
               backgroundImage: `linear-gradient(90deg, #0E79FF 1.6%, rgba(14, 121, 255, 0) 100%), url(${singleUpcoming?.coverImageUrl})`,
               backgroundSize: "cover",
@@ -160,88 +160,90 @@ const ViewSingleLiveGroup = () => {
             <p className="mt-6 text-muted text-base sm:text-xl max-w-[626px]">
               {singleUpcoming?.description}
             </p>
-            <div className="-w-full lg:max-w-[580px] grid grid-cols-1 lg:grid-cols-2 lg:gap-8 gap-6 mt-12 ">
+            <div className="-w-full lg:max-w-[680px] grid grid-cols-1 lg:grid-cols-2 lg:gap-8 gap-6 mt-12 ">
               {/* star  t */}
               <div className="w-full flex flex-col">
-                <p className="text-muted inter ">Class Type</p>
-                <p className="text-black text-base sm:text-lg font-semibold inter mt-2">
+                <p className="text-lg font-semibold inter ">Class Type</p>
+                <p className="text-muted text-base sm:text-lg  inter mt-2">
                   LIVE GROUP
                 </p>
               </div>
               {/* end */}
               {/* star  t */}
               <div className="w-full flex flex-col">
-                <p className="text-muted inter ">Number of Attendees</p>
-                <p className="text-black text-base sm:text-lg font-semibold inter mt-2">
+                <p className="text-lg font-semibold inter ">
+                  Number of Seat
+                </p>
+                <p className="text-muted text-base sm:text-lg  inter mt-2">
                   {singleUpcoming?.numOfAttendees}
                 </p>
               </div>
               {/* end */}
               {/* star  t */}
               <div className="w-full flex flex-col">
-                <p className="text-muted inter ">Attendance Type</p>
-                <p className="text-black text-base sm:text-lg font-semibold inter mt-2">
+                <p className=" inter text-lg font-semibold ">Attendance Type</p>
+                <p className="text-muted text-base sm:text-lg  inter mt-2">
                   {singleUpcoming?.attendantType}
                 </p>
               </div>
               {/* end */}
               {/* star  t */}
               <div className="w-full flex flex-col">
-                <p className="text-muted inter ">
+                <p className="text-lg font-semibold inter ">
                   Number of registered attendees
                 </p>
-                <p className="text-black text-base sm:text-lg font-semibold inter mt-2">
+                <p className="text-muted text-base sm:text-lg  inter mt-2">
                   {singleUpcoming?.registeredAttendeesCount}
                 </p>
               </div>
               {/* end */}
               {/* star  t */}
               <div className="w-full flex flex-col">
-                <p className="text-muted inter ">Number of series</p>
-                <p className="text-black text-base sm:text-lg font-semibold inter mt-2">
+                <p className="text-lg font-semibold inter ">Number of series</p>
+                <p className="text-muted text-base sm:text-lg  inter mt-2">
                   {singleUpcoming?.seriesCount}
                 </p>
               </div>
               {/* end */}
               {/* star  t */}
               <div className="w-full flex flex-col">
-                <p className="text-muted inter ">Duration</p>
-                <p className="text-black text-base sm:text-lg font-semibold inter mt-2">
+                <p className="text-lg font-semibold inter ">Duration</p>
+                <p className="text-muted text-base sm:text-lg  inter mt-2">
                   {singleUpcoming?.duration} mins
                 </p>
               </div>
               {/* end */}
               {/* star  t */}
               <div className="w-full flex flex-col">
-                <p className="text-muted inter ">Pricing type</p>
-                <p className="text-black text-base sm:text-lg font-semibold inter mt-2">
+                <p className="text-lg font-semibold inter ">Pricing type</p>
+                <p className="text-muted text-base sm:text-lg  inter mt-2">
                   {singleUpcoming?.isFree ? "FREE" : "PAID"}
                 </p>
               </div>
               {/* end */}
               {/* star  t */}
               <div className="w-full flex flex-col">
-                <p className="text-muted inter ">Pricing type(#)</p>
-                <p className="text-black text-base sm:text-lg font-semibold inter mt-2">
+                <p className="text-lg font-semibold inter ">Pricing type(#)</p>
+                <p className="text-muted text-base sm:text-lg  inter mt-2">
                   {singleUpcoming?.cost?.amount}
                 </p>
               </div>
               {/* end */}
               {/* star  t */}
               <div className="w-full flex flex-col">
-                <p className="text-muted inter ">Language Tag</p>
-                <p className="text-black text-base sm:text-lg font-semibold inter mt-2">
+                <p className="text-lg font-semibold inter ">Language Tag</p>
+                <p className="text-muted text-base sm:text-lg  inter mt-2">
                   {singleUpcoming?.languageTag}
                 </p>
               </div>
               {/* end */}
               {/* star  t */}
               <div className="w-full flex flex-col">
-                <p className="text-muted inter ">Class Dates</p>
+                <p className="text-lg font-semibold inter ">Class Dates</p>
                 {singleUpcoming?.liveDateTimes?.map(
                   (item: any, index: number) => (
                     <p
-                      className="text-black text-base sm:text-lg font-semibold inter mt-2"
+                      className="text-muted text-base sm:text-lg  inter mt-2"
                       key={index}
                     >
                       {`${formatDateTime(item).date}, ${
@@ -254,7 +256,10 @@ const ViewSingleLiveGroup = () => {
               {/* end */}
             </div>
             <div className="mt-12 mb-20">
-              <button className="w-fit px-6 rounded-[4px] h-[41px] bg-primary text-white font-medium red-hat text-base cursor-pointer border-[2px] border-[#394EF1] " onClick={() => setOpenLive(true)}>
+              <button
+                className="w-fit px-6 rounded-[4px] h-[41px] bg-primary text-white font-medium red-hat text-base cursor-pointer border-[2px] border-[#394EF1] "
+                onClick={() => setOpenLive(true)}
+              >
                 Join live group class
               </button>
             </div>

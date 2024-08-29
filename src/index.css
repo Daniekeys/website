@@ -10,11 +10,22 @@
 
 
 
-
+.z-hero{
+  z-index: 1000 !important ;
+}
 .z-modal{
   z-index: 5555 !important;
 }
-
+.z-nav{
+  z-index: 2000 !important;
+}
+  .custom-flag {
+    background-position: 50%;
+background-repeat: no-repeat;
+    width: 60px !important; /* Forces width */
+    height: 40px !important; /* Forces height */
+    background-size: cover; /* Ensures flag scales proportionally */
+  }
 *{
   
   font-family: "Red Hat Display", sans-serif ;

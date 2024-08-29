@@ -1,30 +1,28 @@
-import React,{useState, useEffect, useCallback} from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import ContainerLayout from '../../layouts/ContainerLayout'
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { getAllUpcomingLG } from '../../features/offeringslice';
 import LoadingComponent from '../Loaders/skeleton-loading';
-
 import LiveOfferingCard from './singleLiveCard';
-import { Link } from 'react-router-dom';
-const UpcomingLiveGroup = () => {
-    const [loading, setLoading] = useState(true);
-    const dispatch = useAppDispatch();
-    const offering = useAppSelector(state => state.offerings);
-    const upcomingOffering = offering?.allUpcomingLiveClasses?.offerings;
 
-      const fetchData = useCallback(async () => {
-        await dispatch(getAllUpcomingLG({page:0,pageSize:12}));
-       
-        setLoading(false);
-      }, []);
+const ViewAllLiveGroups = () => {
+        const [loading, setLoading] = useState(true);
+        const dispatch = useAppDispatch();
+        const offering = useAppSelector((state) => state.offerings);
+        const upcomingOffering = offering?.allUpcomingLiveClasses?.offerings;
 
-      useEffect(() => {
-        fetchData();
-      }, []);
-  
-    
+        const fetchData = useCallback(async () => {
+          await dispatch(getAllUpcomingLG({ page: 0, pageSize: 100 }));
+
+          setLoading(false);
+        }, []);
+
+        useEffect(() => {
+            fetchData();
+            window.scrollTo(0,0)
+        }, []);
   return (
-    <div className="w-full py-16 2xl:py-[100px] bg-white ">
+    <div className="w-full mt-28 bg-white">
       <ContainerLayout>
         <div className="w-full flex flex-col">
           <h1 className="2xl:text-[40px] md:text-3xl text-2xl font-bold red-hat 2xl:leading-[48px]  ">
@@ -46,18 +44,11 @@ const UpcomingLiveGroup = () => {
               })}
             </div>
           )}
-          <div className="w-full mt-12 flex items-center justify-center">
-            <Link
-              to={"/all-classes"}
-              className="h-[41px] rounded-[4px] bg-primary text-white px-6 font-medium red-hat w-fit flex items-center "
-            >
-              View more classes
-            </Link>
-          </div>
+       
         </div>
       </ContainerLayout>
     </div>
   );
 }
 
-export default UpcomingLiveGroup
+export default ViewAllLiveGroups

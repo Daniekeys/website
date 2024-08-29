@@ -6,6 +6,7 @@ import woman from "../../assets/png/hero-woman.png";
 import globe from "../../assets/icons/globe.svg";
 import lang from "../../assets/icons/lang-icon.svg";
 import PrimarySelect from '../Selects/PrimarySelect';
+import { useNavigate } from 'react-router-dom';
 const langData = [
   { name: "English", value: "English" },
   { name: "Spanish", value: "Spanish" },
@@ -36,7 +37,8 @@ const Hero = () => {
   const [isCoach, setIsCoach] = useState(true);
   const [ selectedLang, setSelectedLang ] = useState({});
   const [ selectedRange, setSelectedRange ] = useState({});
-  const [ selectedTime, setSelectedTime ] = useState({});
+  const [selectedTime, setSelectedTime] = useState({});
+  const navigate = useNavigate();
 
 
 
@@ -70,7 +72,7 @@ const Hero = () => {
   
   return (
     <>
-      <div className="w-full  flex flex-col bg-[#F0F5FC] pb-10 lg:mt-0 mt-20 pt-10 ">
+      <div className="w-full  flex flex-col bg-[#F0F5FC] pb-10 lg:mt-0 lg:pt-20 mt-20 pt-10  ">
         <ContainerLayout>
           <div className="w-full flex flex-col relative">
             {/* hero side */}
@@ -115,10 +117,10 @@ const Hero = () => {
           </div>
         </ContainerLayout>
       </div>
-      <div className="w-full lg:-mt-20">
+      <div className="w-full lg:-mt-20 z-hero  ">
         <ContainerLayout>
           <div className="w-full xl:w-11/12 mx-auto flex flex-col pb-24 ">
-            <div className="w-full grid grid-cols-2 max-w-[465px] min-h-[32px]">
+            <div className="w-full grid grid-cols-2 max-w-[465px] min-h-[32px] z-100">
               <div
                 className={`flex items-center justify-center cursor-pointer ${
                   isCoach
@@ -152,6 +154,7 @@ const Hero = () => {
                         setSelected={setSelectedLang}
                         data={langData}
                         listHeight="max-h-[100px]"
+                        name="Select Language"
                       />
                     </div>
                     <div className="w-full relative">
@@ -161,6 +164,7 @@ const Hero = () => {
                         setSelected={setSelectedRange}
                         data={rangeData}
                         listHeight="max-h-[100px]"
+                        name="select price range"
                       />
                     </div>
                     <div className="w-full relative">
@@ -170,13 +174,80 @@ const Hero = () => {
                         setSelected={setSelectedTime}
                         data={timeData}
                         listHeight="max-h-[100px]"
+                        name="select time"
                       />
                     </div>
                   </div>
                   <div className="span w-full lg:w-[100px] min-w-[100px] max-w-[110px]">
-                    <button className="h-11 px-6 rounded-[4px] border-[2px] flex items-center justify-center border-[#394EF1] text-white red-hat text-base lg:text-lg bg-[#0E79FF]">
+                    <button className="h-11 px-6 rounded-[4px] border-[2px] flex items-center justify-center border-[#394EF1] text-white red-hat text-base lg:text-lg bg-[#0E79FF]"
+                    onClick={() => navigate("/all-coaches")}
+                    >
                       Search
                     </button>
+                  </div>
+                </div>
+              </div>
+            )}
+            {/* end of find coach */}
+            {/* find coach sesseion */}
+            {!isCoach && (
+              <div className="w-full flex flex-col relative bg-white search-shadow">
+                <div className="w-full flex flex-col lg:flex-row py-6 px-2 lg:px-6 gap-6">
+                  <div className="w-full grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3  gap-4 ">
+                    {/* start */}
+                    <div className="w-full relative flex items-center border border-border gap-3 rounded-[6px]  py-1 px-2">
+                      <span className="fi fi-gb  custom-flag"></span>
+                      <div className="flex flex-col">
+                        <p className="text-base font-bold red-hat">English</p>
+                        <p className="text-muted">20 coaches</p>
+                      </div>
+                    </div>
+                    {/* end */}
+                    {/* start */}
+                    <div className="w-full relative flex items-center border border-border rounded-[6px] gap-3 py-1 px-2">
+                      <span className="fi fi-ng fis custom-flag"></span>
+                      <div className="flex flex-col">
+                        <p className="text-base font-bold red-hat">Yoruba</p>
+                        <p className="text-muted">10 coaches</p>
+                      </div>
+                    </div>
+                    {/* end */}
+                    {/* start */}
+                    <div className="w-full relative flex items-center border border-border rounded-[6px] gap-3 py-1 px-2">
+                      <span className="fi fi-fr  custom-flag"></span>
+                      <div className="flex flex-col">
+                        <p className="text-base font-bold red-hat">French</p>
+                        <p className="text-muted">20 coaches</p>
+                      </div>
+                    </div>
+                    {/* end */}
+                    {/* start */}
+                    <div className="w-full relative flex items-center border border-border rounded-[6px] gap-3 py-1 px-2">
+                      <span className="fi fi-ng  custom-flag"></span>
+                      <div className="flex flex-col">
+                        <p className="text-base font-bold red-hat">Hausa</p>
+                        <p className="text-muted">10 coaches</p>
+                      </div>
+                    </div>
+                    {/* end */}
+                    {/* start */}
+                    <div className="w-full relative flex items-center border border-border rounded-[6px] gap-3  py-1 px-2">
+                      <span className="fi fi-es  custom-flag"></span>
+                      <div className="flex flex-col">
+                        <p className="text-base font-bold red-hat">Spanish</p>
+                        <p className="text-muted">10 coaches</p>
+                      </div>
+                    </div>
+                    {/* end */}
+                    {/* start */}
+                    <div className="w-full relative flex items-center border border-border rounded-[6px] gap-3 py-1 px-2">
+                      <span className="fi fi-ng  custom-flag"></span>
+                      <div className="flex flex-col">
+                        <p className="text-base font-bold red-hat">Igbo</p>
+                        <p className="text-muted">10 coaches</p>
+                      </div>
+                    </div>
+                    {/* end */}
                   </div>
                 </div>
               </div>

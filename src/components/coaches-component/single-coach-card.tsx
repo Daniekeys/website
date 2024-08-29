@@ -7,7 +7,8 @@ import { Button } from '../Button'
 import { CoachDetails } from '../../util/types'
 import ReUseModal from '../modal/Modal'
 import Calendar from './booking-calender'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom' 
+import { Link } from 'react-router-dom'
 interface SingleCardProps {
   item:any
 }
@@ -18,12 +19,15 @@ const SingleCoachCard: React.FC<SingleCardProps> = ({ item }: any) => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full flex flex-col lg:w-[257px] bg-white rounded-[8px]" key={id}>
+    <div
+      className="w-full flex flex-col lg:w-full verify-shadow bg-white rounded-[8px]"
+      key={id}
+    >
       <img
         src={item?.profileImage ?? pic}
         alt=""
         className="lg:w-full  h-[200px] rounded-t-[8px] object-cover cursor-pointer"
-onClick={() => navigate(`/view-coach/${id}`)}
+        onClick={() => navigate(`/view-coach/${id}`)}
       />
       <div className="w-full px-4 py-3 flex flex-col">
         <div className="flex gap-3 items-center">
@@ -92,7 +96,14 @@ onClick={() => navigate(`/view-coach/${id}`)}
             </p>
           </div>
           <div className="w-full">
-            <Button name="Book a lesson" className="min-w-full"  onClick={() => setOpen(true)} />
+            <Link
+              to={`https://mylang-coach.vercel.app//view-coach/${id}`}
+              target='_blank'
+             
+              className={`flex  justify-center dm-sans text-xs font-medium h-8  items-center hover:bg-[#0E79FF] transition duration-500  bg-black rounded-[4px] text-white px-3 w-fit min-w-full`}
+            >
+              View coach
+            </Link>
           </div>
         </div>
       </div>
@@ -101,7 +112,7 @@ onClick={() => navigate(`/view-coach/${id}`)}
         setOpen={setOpen}
         width="sm:max-w-[630px] sm:w-full"
       >
-        <Calendar  item={item} setOpen={setOpen} />
+        <Calendar item={item} setOpen={setOpen} />
       </ReUseModal>
     </div>
   );

@@ -5,16 +5,13 @@ import {Link} from "react-router-dom";
 import logo from "../../assets/icons/lang-logo.svg";
 import { Bars, CloseIcon } from "../../assets/website-icons";
 
-import { useNavigate } from "react-router-dom";
-const styles = {
-  active: "",
-  nonactive: "",
-};
+
+
 const MobileNav = () => {
   const [show, setShow] = useState(false);
  
  
-     const navigate = useNavigate();
+   
  
   return (
     <div>
@@ -42,7 +39,6 @@ const MobileNav = () => {
         {show && (
           <div className="bg-white w-full flex flex-col items-center z-100 transition-all duration-1000 delay-1000 h-screen relative ">
             <div className="flex flex-col w-full px-4 mt-[45px] gap-6">
-             
               <span>
                 <Link
                   to={"#coaches"}
@@ -69,9 +65,12 @@ const MobileNav = () => {
               </span>
 
               <div className="flex flex-col  space-y-5 absolute bottom-40 ">
-                <button className="h-[41px] rounded-[4px] bg-primary text-white px-6 font-medium red-hat ">
+                <Link
+                  to={"/all-coaches"}
+                  className="h-[41px] rounded-[4px] bg-primary text-white px-6 font-medium red-hat flex items-center "
+                >
                   Book a coach
-                </button>
+                </Link>
                 <button className="h-[41px] rounded-[4px] bg-[#464646] text-white px-6 font-medium red-hat ">
                   Learn more
                 </button>

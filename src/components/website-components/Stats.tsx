@@ -34,28 +34,23 @@ const Stats = () => {
             <div className="mt-12 bg-white  rounded-[12px] gap-8 flex flex-wrap justify-between p-4 ">
               <span className="flex flex-col">
                 <p className="text-lg md:text-2xl font-bold red-hat text-[#18181B]">
-                  60k
+                  20+
                 </p>
                 <p className="text-muted text-sm">Experienced coaches</p>
               </span>
               <span className="flex flex-col">
                 <p className="text-lg md:text-2xl font-bold red-hat text-[#18181B]">
-                  400k
-                </p>
-                <p className="text-muted text-sm">5-star coaches reviews</p>
-              </span>
-              <span className="flex flex-col">
-                <p className="text-lg md:text-2xl font-bold red-hat text-[#18181B]">
-                  600+
+                  6+
                 </p>
                 <p className="text-muted text-sm">Languages taught</p>
               </span>
               <span className="flex flex-col">
                 <p className="text-lg md:text-2xl font-bold red-hat text-[#18181B]">
-                  300+
+                  3+
                 </p>
                 <p className="text-muted text-sm">Coaches nationalities</p>
               </span>
+            
             </div>
           </div>
           {/* end of second session */}

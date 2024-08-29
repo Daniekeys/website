@@ -274,11 +274,7 @@ export const getAllCoaches = createAsyncThunk(
       const { data } = await APIService.get(
         `${url.allUser}/coach`,
 
-        {
-          headers: {
-            Authorization: `Bearer ${auth?.token}`,
-          },
-        }
+       
       );
       return data;
     } catch (error: any) {

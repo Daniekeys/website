@@ -7,7 +7,7 @@ import MobileNav from '../../components/website-components/mobile-nav'
 const ViewLiveGroup = () => {
   return (
     <div className='w-full flex flex-col'>
-      <Navbar />
+      <Navbar active />
       <MobileNav />
           <ViewSingleLiveGroup />
           <Footer />

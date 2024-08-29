@@ -162,7 +162,7 @@ useEffect(() => {
             />
           </span>
           <h1 className="text-sm lg:text-base font-medium red-hat capitalize truncate">
-            {item?.coachName}
+            {item?.coachName?.toLowerCase()}
           </h1>
           <img src={ar} alt="ar" />
           <span>
@@ -205,7 +205,7 @@ useEffect(() => {
               <UsersIcon />
             </span>
             <p className="text-muted  text-sm">
-              {item?.numOfAttendees} Attendees
+              {item?.numOfAttendees} Seat{item?.numOfAttendees > 1 ? "s" : ""}
             </p>
           </div>
 
@@ -216,7 +216,7 @@ useEffect(() => {
             </p>
           </div>
         </div>
-        <p className="text-lg sm:text-xl xl:text-2xl font-bold red-hat mt-6">
+        <p className="text-sm sm:text-base xl:text-base font-bold red-hat mt-6">
           {item?.isFree ? "FREE" : item?.cost?.amount}
         </p>
         {/* <div className="w-full flex items-center gap-4 mt-6  pt-3">
