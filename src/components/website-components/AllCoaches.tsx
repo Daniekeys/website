@@ -26,7 +26,7 @@ const AllCoaches = () => {
         );
       }
   return (
-    <div className='w-full mt-24'>
+    <div className='w-full mt-24 mb-24'>
       <ContainerLayout>
         <div className="w-full flex flex-col py-6 lg:px-12 px-4 gap-12  ">
           <div className="w-full flex items-center justify-between">
