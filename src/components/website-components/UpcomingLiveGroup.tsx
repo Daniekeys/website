@@ -24,9 +24,9 @@ const UpcomingLiveGroup = () => {
   
     
   return (
-    <div className="w-full py-16 2xl:py-[100px] bg-white ">
+    <div className="w-full py-16 2xl:py-[100px] bg-white flow-hide ">
       <ContainerLayout>
-        <div className="w-full flex flex-col">
+        <div className="w-full flex flex-col flow-hide">
           <h1 className="2xl:text-[40px] md:text-3xl text-2xl font-bold red-hat 2xl:leading-[48px]  ">
             Upcoming Live & Group Classes
           </h1>
@@ -49,7 +49,7 @@ const UpcomingLiveGroup = () => {
           <div className="w-full mt-12 flex items-center justify-center">
             <Link
               to={"/all-classes"}
-              className="h-[41px] rounded-[4px] bg-primary text-white px-6 font-medium red-hat w-fit flex items-center "
+              className="h-[41px] rounded-[4px] bg-transparent border-[2px] border-[#71717A] text-[#71717A] px-6 font-medium red-hat w-fit flex items-center hover:bg-black hover:text-white transition-all ease-in-out  hover:scale-105 "
             >
               View more classes
             </Link>

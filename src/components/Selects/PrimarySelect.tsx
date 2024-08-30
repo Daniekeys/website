@@ -32,7 +32,7 @@ export default function PrimarySelect({
   return (
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full relative">
           <Listbox.Label className="text-xs text-foreground font-medium dm-sans mb-1">
             {label && label}
           </Listbox.Label>
@@ -56,12 +56,13 @@ export default function PrimarySelect({
             <Transition
               show={open}
               as={Fragment}
-              leave="transition ease-in duration-100"
+              leave="transition ease-in duration-100 "
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
+              
             >
               <Listbox.Options
-                className={`absolute z-10 mt-1 w-full bg-white shadow-lg ${listHeight ?? "max-h-60"}  rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm`}
+                className={`absolute z-star mt-1 w-full bg-white shadow-lg ${listHeight ?? "max-h-60"}  rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm`}
               >
                 {data?.map((person: any, index: number) => (
                   <Listbox.Option

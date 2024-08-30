@@ -137,14 +137,14 @@ useEffect(() => {
 
   return (
     <div
-      className="w-full flex flex-col offering-shadow rounded-md cursor-pointer"
+      className="w-full flex flex-col offering-shadow rounded-[8px] cursor-pointer"
       key={item?.id}
     >
       <img
         src={item?.coverImageUrl}
         onError={handleError}
         alt=""
-        className=" rounded-md w-full h-[240px] object-cover "
+        className=" rounded-t-[8px] r w-full h-[240px] object-cover "
         onClick={() => {
           if (item?.type === "LIVE_GROUP") {
             setOpenLive(true);
@@ -246,7 +246,7 @@ useEffect(() => {
         </div> */}
         <div className="w-full grid grid-cols-2 gap-4 mt-6">
           <button
-            className="bg-black text-white red-hat h-[37px] flex items-center justify-center w-full cursor-pointer rounded-[4px] "
+            className="bg-black text-white red-hat h-[37px] flex items-center justify-center w-full cursor-pointer rounded-[4px] hover:bg-[#0E60FF] transition-all ease-in-out  hover:scale-105 hover:text-white "
             onClick={() => {
               setOpenLive(true);
             }}
@@ -254,15 +254,12 @@ useEffect(() => {
             Join Class
           </button>
           <button
-            className="bg-primary text-white red-hat h-[37px] flex items-center justify-center w-full rounded-[4px] "
+            className="bg-transparent border border-black text-black red-hat h-[37px] flex items-center justify-center w-full rounded-[4px] hover:bg-[#0E60FF] transition-all ease-in-out  hover:scale-105 hover:text-white "
             onClick={() => {
               setOpenShare(true);
             }}
           >
             Share{" "}
-            <span className="ml-1">
-              <FaShareAlt />
-            </span>
           </button>
         </div>
       </div>

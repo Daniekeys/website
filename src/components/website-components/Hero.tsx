@@ -72,18 +72,18 @@ const Hero = () => {
   
   return (
     <>
-      <div className="w-full  flex flex-col bg-[#F0F5FC] pb-10 lg:mt-0 lg:pt-20 mt-20 pt-10  ">
+      <div className="w-full  flex flex-col bg-[#F0F5FC] pb-10 lg:pb-0 lg:mt-0 lg:pt-0 mt-20 pt-10 rounded-b-[8px]  ">
         <ContainerLayout>
           <div className="w-full flex flex-col relative">
             {/* hero side */}
             <div className="w-full flex flex-col lg:flex-row  lg:items-center lg:justify-between h-full">
-              <div className="w-full lg:w-6/12 flex h-full flex-col justify-center">
-                <h1 className="text-black max-w-[656px] text-2xl sm:text-3xl xl:text-4xl 2xl:text-5xl font-bold red-hat xl:leading-[60px]  ">
+              <div className="w-full lg:w-7/12 2xl:w-6/12 flex h-full flex-col justify-center">
+                <h1 className="text-black  text-2xl sm:text-3xl  xl:text-5xl 2xl:text-[50px] font-bold red-hat xl:leading-[60px]  ">
                   Learn <span className="text-primary">{displayText}</span>
                   <span className="border-r-0 border-primary text-primary animate-blink">
                     |
                   </span>
-                  with expert coaches on MyLangCoach
+                  with expert <br /> coaches on MyLangCoach
                 </h1>
 
                 <p className="mt-6 text-base lg:text-xl red-hat">
@@ -107,7 +107,7 @@ const Hero = () => {
                 <img
                   src={woman}
                   alt="my-lang-ilus"
-                  className="w-full h-auto object-contain max-w-[500px]"
+                  className="w-full h-auto object-contain max-w-[500px] -mt-8"
                 />
               </div>
             </div>
@@ -119,13 +119,13 @@ const Hero = () => {
       </div>
       <div className="w-full lg:-mt-20 z-hero  ">
         <ContainerLayout>
-          <div className="w-full xl:w-11/12 mx-auto flex flex-col pb-24 ">
+          <div className="w-full xl:w-full mx-auto flex flex-col pb-24 ">
             <div className="w-full grid grid-cols-2 max-w-[465px] min-h-[32px] z-100">
               <div
                 className={`flex items-center justify-center cursor-pointer ${
                   isCoach
-                    ? "bg-white text-[#09090B] text-sm inter font-medium "
-                    : "bg-[#e0ebfa] shadow-md text-muted text-sm font-medium inter "
+                    ? "bg-white text-[#09090B] text-sm inter font-medium rounded-tl-[8px] "
+                    : "bg-[#f2f2f2] shadow-md text-muted text-sm font-medium inter "
                 }`}
                 onClick={() => setIsCoach(true)}
               >
@@ -135,7 +135,7 @@ const Hero = () => {
                 className={`flex items-center justify-center cursor-pointer ${
                   !isCoach
                     ? "bg-white"
-                    : "bg-[#e0ebfa] bg-opacity-70 shadow-md text-muted text-sm font-medium inter "
+                    : "bg-[#f2f2f2] bg-opacity-70 shadow-md text-muted text-sm font-medium inter "
                 }`}
                 onClick={() => setIsCoach(false)}
               >
@@ -144,7 +144,7 @@ const Hero = () => {
             </div>
             {/* find coach sesseion */}
             {isCoach && (
-              <div className="w-full flex flex-col relative bg-white search-shadow">
+              <div className="w-full flex flex-col relative bg-white search-shadow rounded-[8px] rounded-tl-none">
                 <div className="w-full flex flex-col lg:flex-row py-6 px-2 lg:px-6 gap-6">
                   <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
                     <div className="w-full relative">
@@ -179,8 +179,9 @@ const Hero = () => {
                     </div>
                   </div>
                   <div className="span w-full lg:w-[100px] min-w-[100px] max-w-[110px]">
-                    <button className="h-11 px-6 rounded-[4px] border-[2px] flex items-center justify-center border-[#394EF1] text-white red-hat text-base lg:text-lg bg-[#0E79FF]"
-                    onClick={() => navigate("/all-coaches")}
+                    <button
+                      className="h-11 px-6 rounded-[4px] border-[2px] flex items-center justify-center border-[#394EF1] text-white red-hat text-base lg:text-lg bg-[#0E79FF] hover:bg-[#0E60FF] transition-all ease-in-out  hover:scale-105"
+                      onClick={() => navigate("/all-coaches")}
                     >
                       Search
                     </button>
@@ -191,7 +192,7 @@ const Hero = () => {
             {/* end of find coach */}
             {/* find coach sesseion */}
             {!isCoach && (
-              <div className="w-full flex flex-col relative bg-white search-shadow">
+              <div className="w-full flex flex-col relative bg-white search-shadow rounded-[8px] rounded-tl-none">
                 <div className="w-full flex flex-col lg:flex-row py-6 px-2 lg:px-6 gap-6">
                   <div className="w-full grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3  gap-4 ">
                     {/* start */}

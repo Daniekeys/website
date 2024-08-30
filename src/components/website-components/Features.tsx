@@ -9,11 +9,11 @@ import bookInActive from "../../assets/svg/inactive-book-a.svg";
 
 const Features = () => {
     const [current, setCurrent] = useState(0);
-   useEffect(() => {
-     setTimeout(() => {
-        setCurrent((prev) => prev === 2 ? 0 : prev + 1)
-     }, 2000);
-   }, [current])
+  //  useEffect(() => {
+  //    setTimeout(() => {
+  //       setCurrent((prev) => prev === 2 ? 0 : prev + 1)
+  //    }, 2000);
+  //  }, [current])
     
     
    
@@ -22,12 +22,14 @@ const Features = () => {
   return (
     <div className="bg-white ">
       <ContainerLayout>
-        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4 h-full mb-4  ">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-4 mt-4 h-full mb-4   ">
           {/* start of a single session */}
           <div
             className={`${
               current === 0 ? "bg-[#0E79FF]" : "bg-white"
-            } rounded-[6px] flex items-center feat-shadow p-6 gap-6 `}
+            } rounded-[6px] flex items-center feat-shadow p-6 gap-6 cursor-pointer transition-all ease-in-out duration-700 `}
+            onMouseEnter={() => setCurrent(0)}
+            onMouseLeave={() => setCurrent(4)}
           >
             <span>
               <img
@@ -59,7 +61,9 @@ const Features = () => {
           <div
             className={`${
               current === 1 ? "bg-[#0E79FF]" : "bg-white"
-            } rounded-[6px] flex items-center feat-shadow p-6 gap-6 `}
+            } rounded-[6px] flex items-center feat-shadow p-6 gap-6 cursor-pointer transition-all ease-in-out duration-700 `}
+            onMouseEnter={() => setCurrent(1)}
+            onMouseLeave={() => setCurrent(4)}
           >
             <span>
               <img
@@ -90,8 +94,10 @@ const Features = () => {
           {/* start of a single session */}
           <div
             className={`${
-              current === 2 ? "bg-[#0E79FF]" : "bg-white"
-            } rounded-[6px] flex items-center feat-shadow p-6 gap-6 `}
+              current === 2 ? "bg-[#0E79FF]" : "bg-white cursor-pointer"
+            } rounded-[6px] flex items-center feat-shadow p-6 gap-6 cursor-pointer transition-all ease-in-out duration-700 `}
+            onMouseEnter={() => setCurrent(2)}
+            onMouseLeave={() => setCurrent(4)}
           >
             <span>
               <img

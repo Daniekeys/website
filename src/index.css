@@ -19,6 +19,9 @@
 .z-nav{
   z-index: 2000 !important;
 }
+.z-star{
+  z-index: 1500 !important;
+}
   .custom-flag {
     background-position: 50%;
 background-repeat: no-repeat;

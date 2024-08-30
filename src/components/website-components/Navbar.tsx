@@ -6,10 +6,13 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = ({ active }: { active: boolean }) => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  console.log(active)
   return (
     <div
-      className={` hidden lg:flex w-full fixed top-0 right-0 left-0 py-6  ${
-        active ? "bg-white z-nav" : "bg-transparent"
+      className={` hidden lg:flex w-full rounded-t-[8px]  py-6  ${
+        active
+          ? "bg-white z-nav fixed top-0 right-0 left-0  "
+          : "bg-[#F0F5FC] mt-12  "
       } `}
     >
       <ContainerLayout>
@@ -51,11 +54,11 @@ const Navbar = ({ active }: { active: boolean }) => {
           <div className="w-auto flex items-center gap-3">
             <Link
               to={"/all-coaches"}
-              className="h-[41px] rounded-[4px] bg-primary flex items-center text-white px-6 font-medium red-hat "
+              className="h-[41px] rounded-[4px] bg-primary border-[2px] border-[#394EF1] flex items-center text-white px-6 font-normal red-hat hover:bg-[#0E60FF] transition-all ease-in-out  hover:scale-105 "
             >
               Book a coach
             </Link>
-            <button className="h-[41px] rounded-[4px] bg-[#464646] text-white px-6 font-medium red-hat ">
+            <button className="h-[41px] rounded-[4px] bg-[#464646] border-[2px] border-black text-white px-6 font-normal hover:bg-[#353434] transition-all ease-in-out  red-hat hover:scale-105 ">
               Learn more
             </button>
           </div>

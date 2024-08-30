@@ -24,13 +24,13 @@ const Home = () => {
       }
     }, []);
   return (
-    <div className='w-full flex flex-col relative '>
+    <div className='w-full flex flex-col relative bg-white lg:px-12   '>
       <Navbar active={active} />
       <MobileNav />
       <Hero />
-      <UpcomingLiveGroup />
       <Features />
       <Stats />
+      <UpcomingLiveGroup />
       <Learners />
       <WhyChoose />
       <Online />
