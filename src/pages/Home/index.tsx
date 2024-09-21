@@ -24,7 +24,10 @@ const Home = () => {
       }
     }, []);
   return (
+    <div className="w-full">
+
     <div className='w-full flex flex-col relative bg-white lg:px-12   '>
+      
       <Navbar active={active} />
       <MobileNav />
       <Hero />
@@ -35,6 +38,7 @@ const Home = () => {
       <WhyChoose />
       <Online />
       <Become />
+    </div>
       <Footer />
     </div>
   )
