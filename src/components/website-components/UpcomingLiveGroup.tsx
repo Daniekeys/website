@@ -24,7 +24,10 @@ const UpcomingLiveGroup = () => {
   
     
   return (
-    <div className="w-full py-16 2xl:py-[100px] bg-white flow-hide ">
+    <div
+      className="w-full py-16 2xl:py-[100px] bg-white flow-hide "
+      id="#classes"
+    >
       <ContainerLayout>
         <div className="w-full flex flex-col flow-hide">
           <h1 className="2xl:text-[40px] md:text-3xl text-2xl font-bold red-hat 2xl:leading-[48px]  ">

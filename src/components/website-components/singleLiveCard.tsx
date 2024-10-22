@@ -368,7 +368,7 @@ useEffect(() => {
           </h1>
           <div className="mb-4">
             <Input
-              label={"Add A Session Note"}
+              label={"  Note"}
               placeholder="Enter Note..."
               value={note}
               setValue={setNote}
@@ -377,8 +377,8 @@ useEffect(() => {
           </div>
           <div className="mb-4">
             <Input
-              label={"Enter Email"}
-              placeholder="your email"
+              label={" Email"}
+              placeholder=" example@gmail.com"
               value={email}
               setValue={setEmail}
               // onChange={(e: any) => setNote(e.target.value)}

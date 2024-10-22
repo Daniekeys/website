@@ -12,7 +12,7 @@ const Footer = () => {
             {/* start of a sec */}
             <div className="w-full lg:w-4/12 flex flex-col">
               <span>
-                <img src={whiteLogo} alt="logo" />
+                <img src={whiteLogo} alt="logo" className='max-w-[105px] h-auto' />
               </span>
               <p className="mt-6 text-white dm-sans max-w-[321px]">
                 MyLangCoach connects language learners with professional

@@ -34,6 +34,16 @@ background-repeat: no-repeat;
   font-family: "Red Hat Display", sans-serif ;
   font-optical-sizing: auto;
 }
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
 .dm-sans {
    font-family: "DM Sans", sans-serif !important;
   font-optical-sizing: auto;

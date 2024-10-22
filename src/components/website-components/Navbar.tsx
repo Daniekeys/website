@@ -21,30 +21,28 @@ const Navbar = ({ active }: { active: boolean }) => {
             <img
               src={logo}
               alt="logo"
-              className="w-[140px] h-auto cursor-pointer"
+              className="w-[110px] h-auto cursor-pointer"
               onClick={() => navigate("/")}
             />
           </span>
           <div className="w-auto flex items-center gap-6 ">
             <span>
               <Link
-                to={"#coaches"}
+                to={"/all-coaches"}
                 className="red-hat font-semibold text-base "
               >
                 Find Coaches
               </Link>
             </span>
             <span>
-              <Link
-                to={"#coaches"}
-                className="red-hat font-semibold text-base "
-              >
+              <Link to="#classes" className="red-hat font-semibold text-base ">
                 Corporate training
               </Link>
             </span>
             <span>
               <Link
-                to={"/all-coaches"}
+                to={"https://mylang-coach.vercel.app/register"}
+                target='_blank'
                 className="red-hat font-semibold text-base "
               >
                 Become a coach

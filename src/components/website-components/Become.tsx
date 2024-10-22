@@ -23,23 +23,27 @@ const Become = () => {
               Earn money sharing your expert knowledge with students. Sign up to
               start tutoring online with Preply. Find new students Grow your
               business Get paid securely
-                      </p>
-                      <ul className="list-disc ml-4 mt-6">
-                          <li className="font-bold red-hat text-base lg:text-xl">
-                            Find new students
-                          </li>
-                          <li className="font-bold red-hat text-base lg:text-xl">
-                            Grow your business
-                          </li>
-                          <li className="font-bold red-hat text-base lg:text-xl">
-                            Get Paid securely 
-                          </li>
-                      </ul>
-                      <span>
-                          <Link to={"/"} target="_blank" className="px-6 h-[37px] rounded-[4px] bg-black text-white flex items-center justify-center text-sm font-medium red-hat mt-12 w-fit">
-                              Become a coach
-                          </Link>
-                      </span>
+            </p>
+            <ul className="list-disc ml-4 mt-6">
+              <li className="font-bold red-hat text-base lg:text-xl">
+                Find new students
+              </li>
+              <li className="font-bold red-hat text-base lg:text-xl">
+                Grow your business
+              </li>
+              <li className="font-bold red-hat text-base lg:text-xl">
+                Get Paid securely
+              </li>
+            </ul>
+            <span>
+              <Link
+                to={"https://mylang-coach.vercel.app/register"}
+                target="_blank"
+                className="px-6 h-[37px] rounded-[4px] bg-black text-white flex items-center justify-center text-sm font-medium red-hat mt-12 w-fit"
+              >
+                Become a coach
+              </Link>
+            </span>
           </div>
         </div>
       </ContainerLayout>
