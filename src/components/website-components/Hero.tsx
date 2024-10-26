@@ -72,7 +72,7 @@ const Hero = () => {
   
   return (
     <>
-      <div className="w-full  flex flex-col bg-[₦F0F5FC] pb-10 lg:pb-0 lg:mt-0 lg:pt-0 mt-20 pt-10 rounded-b-[8px]  ">
+      <div className="w-full  flex flex-col bg-[#F0F5FC] pb-10 lg:pb-0 lg:mt-0 lg:pt-0 mt-20 pt-10 rounded-b-[8px]  ">
         <ContainerLayout>
           <div className="w-full flex flex-col relative">
             {/* hero side */}
