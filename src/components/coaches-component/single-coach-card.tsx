@@ -1,7 +1,7 @@
 import {SetStateAction, useState} from 'react'
 import pic from "../../assets/png/pic.png" 
 import { StopWatch, VerifyIcon } from '../../assets'
-import ar from "../../assets/png/ar.png"
+
 import { UsersIcon,CapIcon,LanguageIcon } from '../../assets'
 import { Button } from '../Button'
 import { CoachDetails } from '../../util/types'

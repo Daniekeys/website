@@ -2,7 +2,7 @@ import React, { SetStateAction, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { CoachDetails } from "../../util/types";
 import { CancelX, NextIcon, PrevIcon, VerifyIcon } from "../../assets";
-import ar from "../../assets/png/ar.png";
+
 import pic from "../../assets/png/pic.png";
 import { Button, OutlineBtn } from "../Button";
 import { useNavigate } from "react-router-dom";
@@ -117,7 +117,7 @@ const Calendar: React.FC<CalendarProps> = ({ item, setOpen }) => {
           bookTime: selectedTime,
         },
       };
-      console.log(sentdata);
+     
       dispatch(createFirstBookingWithCoach(sentdata));
     } else {
       toast.error("Note and time must be provided");
@@ -156,7 +156,7 @@ const Calendar: React.FC<CalendarProps> = ({ item, setOpen }) => {
                 {" "}
                 {firstName} {lastName}
               </p>
-              <img src={ar} alt="ar" />
+           
               <span>
                 <VerifyIcon />
               </span>

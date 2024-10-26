@@ -151,6 +151,7 @@ useEffect(() => {
           }
         }}
       />
+      
       <div className="flex flex-col p-[18px] bg-white ">
         <h1 className="font-bold text-xl red-hat capitalize">{item?.title}</h1>
         <div className="flex gap-3 items-center mt-2">
@@ -164,7 +165,7 @@ useEffect(() => {
           <h1 className="text-sm lg:text-base font-medium red-hat capitalize truncate">
             {item?.coachName?.toLowerCase()}
           </h1>
-          <img src={ar} alt="ar" />
+        
           <span>
             <VerifyIcon />
           </span>
