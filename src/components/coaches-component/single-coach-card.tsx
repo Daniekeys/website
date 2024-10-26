@@ -13,7 +13,7 @@ interface SingleCardProps {
   item:any
 }
 const SingleCoachCard: React.FC<SingleCardProps> = ({ item }: any) => {
-  const { bio, profileImage, costPerSession, languages, id,firstName,lastName } : CoachDetails = item;
+  const { bio, profileImage, costPerSession, languages, id,firstName,lastName,coachLanguage } : any = item;
   const selectedLanguage = languages?.[0]
   const [open, setOpen] = useState<boolean>(false);
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ const SingleCoachCard: React.FC<SingleCardProps> = ({ item }: any) => {
           <h1 className="text-base lg:text-xl font-bold red-hat capitalize truncate">
             {firstName} {lastName}
           </h1>
-          <img src={ar} alt="ar" />
+          {/* <img src={ar} alt="ar" /> */}
           <span>
             <VerifyIcon />
           </span>
@@ -48,10 +48,10 @@ const SingleCoachCard: React.FC<SingleCardProps> = ({ item }: any) => {
               <span>
                 <StopWatch />
               </span>
-              {costPerSession?.sessionType ?? "0"} -min
+              {costPerSession?.[0]?.sessionType ?? "0"} -min
             </p>
             <p className="text-black red-hat font-bold lg:text-xl text-base mt-1">
-              #{costPerSession?.amount ?? "0"}
+              ₦{costPerSession?.[0]?.amount ?? "0"}
             </p>
           </div>
           <div className="w-1/2 flex-grow flex flex-col">
@@ -59,10 +59,10 @@ const SingleCoachCard: React.FC<SingleCardProps> = ({ item }: any) => {
               <span>
                 <StopWatch />
               </span>
-              60-min
+              {costPerSession?.[1]?.sessionType ?? "0"} -min
             </p>
             <p className="text-black red-hat font-bold lg:text-xl text-base mt-1">
-              ₦64,000
+              ₦{costPerSession?.[1]?.amount ?? "0"}
             </p>
           </div>
         </div>
@@ -71,9 +71,11 @@ const SingleCoachCard: React.FC<SingleCardProps> = ({ item }: any) => {
             <span>
               <CapIcon />
             </span>
-            <p className="text-muted  text-sm">English</p>
+            <p className="text-muted  text-sm capitalize">
+              {coachLanguage?.[0]?.language ?? "Nil"}
+            </p>
           </div>
-          <div className="gap-4 flex items-center ">
+          {/* <div className="gap-4 flex items-center ">
             <div className="flex items-center gap-[6px]">
               <span>
                 <UsersIcon />
@@ -85,21 +87,20 @@ const SingleCoachCard: React.FC<SingleCardProps> = ({ item }: any) => {
               <span className="bg-muted w-[5px] h-[5px] rounded-full"></span>
               <p className="text-muted  text-sm">32 Lessons</p>
             </div>
-          </div>
+          </div> */}
           <div className="w-full gap-3 items-center flex ">
             <span>
               <LanguageIcon />
             </span>
-            <p className="text-muted  text-sm">
-              {selectedLanguage?.language ?? "Nil"}
-              {`  (${selectedLanguage?.proficiency ?? ""})`}
+            <p className="text-muted  text-sm capitalize">
+              {coachLanguage?.[0]?.language ?? "Nil"}
+              {`  (${coachLanguage?.[0]?.proficiency ?? ""})`}
             </p>
           </div>
           <div className="w-full">
             <Link
               to={`https://mylang-coach.vercel.app//view-coach/${id}`}
-              target='_blank'
-             
+              target="_blank"
               className={`flex  justify-center dm-sans text-xs font-medium h-8  items-center hover:bg-[#0E79FF] transition duration-500  bg-black rounded-[4px] text-white px-3 w-fit min-w-full`}
             >
               View coach

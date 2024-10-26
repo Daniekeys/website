@@ -8,8 +8,8 @@ import girlB from "../../assets/png/girl-2.png";
 import girlC from "../../assets/png/girl-3.png";
 const testimonials = [
   {
-    image: girlB,
-    imageB: girlA,
+    image: girlA,
+    imageB: girlB,
     text: "“I wholeheartedly endorse enrolling in this Spanish course at MyLangCoach!”",
     description: `“I wholeheartedly endorse enrolling in this Spanish course at MyLangCoach! The instructor is not only captivating and well-informed but also makes learning enjoyable and stimulating. You’ll acquire extensive knowledge of the Spanish language and culture, and develop the necessary abilities for proficient communication in both written and spoken Spanish. Whether you’re just starting or already an intermediate learner, Don’t delay – enroll today!”`,
     name: "Ogueri, Blessing Chisom",
@@ -17,16 +17,16 @@ const testimonials = [
   {
     image: girlB,
     imageB: girlC,
-    text: "“Learning Spanish here has been a life-changing experience!”",
-    description: `“Learning Spanish here has been a life-changing experience! The instructors break things down so easily, and the progress I’ve made is incredible. This course offers a unique, fun approach to learning the language, and the cultural immersion is a bonus. I highly recommend it for anyone serious about mastering Spanish.”`,
-    name: "John Doe",
+    text: "“One of the finest language institutes!”",
+    description: `“MyLangCoach is undoubtedly one of the finest language institutes, not only in Nigeria but on a global scale. Their tuition fees are incredibly reasonable, making high-quality language education accessible to all. Their teaching methods are exceptionally effective. When I first encountered them, I had zero knowledge of the Spanish language, and they guided me diligently from the very beginning until I achieved my current level of fluency.”`,
+    name: "Favour Orji-Nwoke",
   },
   {
     image: girlC,
     imageB: girlB,
     text: "“A brilliant course for Spanish enthusiasts!”",
-    description: `“A brilliant course for Spanish enthusiasts! The curriculum is rich and diverse, covering every aspect you need to become proficient. The lessons are engaging, and you’ll love every minute of it. Take the leap and improve your Spanish today!”`,
-    name: "Jane Smith",
+    description: `“I highly endorse and encourage enrolling in this Spanish course offered by MyLangCoach. The instructor employs easily comprehensible techniques to ensure a thorough grasp of the Spanish language, encompassing writing, reading, speaking, and listening skills. Don’t miss out on this opportunity – be sure to enroll today!!”`,
+    name: "Oluwatobi Gabriel",
   },
 ];
 const Learners = () => {

@@ -260,7 +260,7 @@ const ViewSingleLiveGroup = () => {
                 className="w-fit px-6 rounded-[4px] h-[41px] bg-primary text-white font-medium red-hat text-base cursor-pointer border-[2px] border-[#394EF1] "
                 onClick={() => setOpenLive(true)}
               >
-                Join live group class
+                Book live group class
               </button>
             </div>
           </div>

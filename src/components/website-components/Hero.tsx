@@ -21,10 +21,10 @@ const timeData = [
 
 ];
 const rangeData = [
-  { name: "#5000 - #50000", value: "5000" },
-  { name: "#10000 - #50000", value: "5000" },
-  { name: "#15000 - #50000", value: "5000" },
-  { name: "#20000 - #50000", value: "5000" },
+  { name: "₦5000 - ₦50000", value: "5000" },
+  { name: "₦10000 - ₦50000", value: "5000" },
+  { name: "₦15000 - ₦50000", value: "5000" },
+  { name: "₦20000 - ₦50000", value: "5000" },
 
 ];
 
@@ -72,7 +72,7 @@ const Hero = () => {
   
   return (
     <>
-      <div className="w-full  flex flex-col bg-[#F0F5FC] pb-10 lg:pb-0 lg:mt-0 lg:pt-0 mt-20 pt-10 rounded-b-[8px]  ">
+      <div className="w-full  flex flex-col bg-[₦F0F5FC] pb-10 lg:pb-0 lg:mt-0 lg:pt-0 mt-20 pt-10 rounded-b-[8px]  ">
         <ContainerLayout>
           <div className="w-full flex flex-col relative">
             {/* hero side */}
@@ -124,8 +124,8 @@ const Hero = () => {
               <div
                 className={`flex items-center justify-center cursor-pointer ${
                   isCoach
-                    ? "bg-white text-[#09090B] text-sm inter font-medium rounded-tl-[8px] "
-                    : "bg-[#f2f2f2] shadow-md text-muted text-sm font-medium inter "
+                    ? "bg-white text-[₦09090B] text-sm inter font-medium rounded-tl-[8px] "
+                    : "bg-[₦f2f2f2] shadow-md text-muted text-sm font-medium inter "
                 }`}
                 onClick={() => setIsCoach(true)}
               >
@@ -135,7 +135,7 @@ const Hero = () => {
                 className={`flex items-center justify-center cursor-pointer ${
                   !isCoach
                     ? "bg-white"
-                    : "bg-[#f2f2f2] bg-opacity-70 shadow-md text-muted text-sm font-medium inter "
+                    : "bg-[₦f2f2f2] bg-opacity-70 shadow-md text-muted text-sm font-medium inter "
                 }`}
                 onClick={() => setIsCoach(false)}
               >
@@ -180,7 +180,7 @@ const Hero = () => {
                   </div>
                   <div className="span w-full lg:w-[100px] min-w-[100px] max-w-[110px]">
                     <button
-                      className="h-11 px-6 rounded-[4px] border-[2px] flex items-center justify-center border-[#394EF1] text-white red-hat text-base lg:text-lg bg-[#0E79FF] hover:bg-[#0E60FF] transition-all ease-in-out  hover:scale-105"
+                      className="h-11 px-6 rounded-[4px] border-[2px] flex items-center justify-center border-[₦394EF1] text-white red-hat text-base lg:text-lg bg-[#0E79FF] hover:bg-[₦0E60FF] transition-all ease-in-out  hover:scale-105"
                       onClick={() => navigate("/all-coaches")}
                     >
                       Search
