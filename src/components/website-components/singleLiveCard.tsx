@@ -151,7 +151,7 @@ useEffect(() => {
           }
         }}
       />
-      
+
       <div className="flex flex-col p-[18px] bg-white ">
         <h1 className="font-bold text-xl red-hat capitalize">{item?.title}</h1>
         <div className="flex gap-3 items-center mt-2">
@@ -165,7 +165,7 @@ useEffect(() => {
           <h1 className="text-sm lg:text-base font-medium red-hat capitalize truncate">
             {item?.coachName?.toLowerCase()}
           </h1>
-        
+
           <span>
             <VerifyIcon />
           </span>
@@ -218,7 +218,7 @@ useEffect(() => {
           </div>
         </div>
         <p className="text-sm sm:text-base xl:text-base font-bold red-hat mt-6">
-          {item?.isFree ? "FREE" : item?.cost?.amount}
+          {item?.isFree ? "FREE" : `₦ ${item?.cost?.amount}`}
         </p>
         {/* <div className="w-full flex items-center gap-4 mt-6  pt-3">
           <div className="flex gap-3  items-center">
