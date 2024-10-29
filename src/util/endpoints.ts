@@ -1,7 +1,7 @@
-import { bookNextSession } from "../features/offeringslice";
+
 
 /** this would wrap all the api endpoints and base urls */
-export const baseUrl = "https://mylangcoach-api.onrender.com/api/v1";
+export const baseUrl = import.meta.env.VITE_BASE_URL;
 
 export const url = {
   login: "/auth/signin",
