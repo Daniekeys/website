@@ -41,8 +41,9 @@ const Navbar = ({ active }: { active: boolean }) => {
             </span>
             <span>
               <Link
-                to={"https://mylang-coach.vercel.app/register"}
-                target='_blank'
+                // to={"https://mylang-coach.vercel.app/register"}
+                to={"#"}
+                target="_blank"
                 className="red-hat font-semibold text-base "
               >
                 Become a coach
@@ -56,9 +57,13 @@ const Navbar = ({ active }: { active: boolean }) => {
             >
               Book a coach
             </Link>
-            <button className="h-[41px] rounded-[4px] bg-[#464646] border-[2px] border-black text-white px-6 font-normal hover:bg-[#353434] transition-all ease-in-out  red-hat hover:scale-105 ">
-              Learn more
-            </button>
+            <Link
+              to={"https://mylang-coach.vercel.app/login"}
+              target="_blank"
+              className="h-[41px] rounded-[4px] bg-[#464646] border-[2px] border-black text-white px-6 font-normal hover:bg-[#353434] transition-all ease-in-out  red-hat hover:scale-105 flex items-center justify-center "
+            >
+              Login
+            </Link>
           </div>
         </div>
       </ContainerLayout>
