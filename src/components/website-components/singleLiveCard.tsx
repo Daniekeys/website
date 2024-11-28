@@ -33,9 +33,10 @@ import twitter from "../../assets/icons/twitter.png";
 import linkedin from "../../assets/icons/linkedin.png";
 import whatsapp from "../../assets/icons/whatsapp.png";
 import { IoCopyOutline } from "react-icons/io5";
+import { websiteUrl } from "../../util/endpoints";
 const LiveOfferingCard = ({ item }: { item: ClassDetails }) => {
 
-    const url = `https://my-lang-website-daniekeys-projects.vercel.app/view-livegroup?slugURL=${item?.slug}`;
+    const url = `${websiteUrl}/view-livegroup?slugURL=${item?.slug}`;
     const text = "Check out this awesome page!";
 
     const handleShare = (shareUrl: string) => {

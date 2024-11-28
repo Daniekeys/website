@@ -3,6 +3,7 @@ import ContainerLayout from '../../layouts/ContainerLayout'
 import logo from "../../assets/icons/lang-logo.svg";
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { appUrl } from '../../util/endpoints';
 const Navbar = ({ active }: { active: boolean }) => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
@@ -41,7 +42,7 @@ const Navbar = ({ active }: { active: boolean }) => {
             </span>
             <span>
               <Link
-                // to={"https://mylang-coach.vercel.app/register"}
+               
                 to={"#"}
                 target="_blank"
                 className="red-hat font-semibold text-base "
@@ -58,7 +59,7 @@ const Navbar = ({ active }: { active: boolean }) => {
               Book a coach
             </Link>
             <Link
-              to={"https://mylang-coach.vercel.app/login"}
+              to={`${appUrl}/login`}
               target="_blank"
               className="h-[41px] rounded-[4px] bg-[#464646] border-[2px] border-black text-white px-6 font-normal hover:bg-[#353434] transition-all ease-in-out  red-hat hover:scale-105 flex items-center justify-center "
             >

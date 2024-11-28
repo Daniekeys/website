@@ -9,6 +9,7 @@ import ReUseModal from '../modal/Modal'
 import Calendar from './booking-calender'
 import { useNavigate } from 'react-router-dom' 
 import { Link } from 'react-router-dom'
+import { appUrl } from '../../util/endpoints'
 interface SingleCardProps {
   item:any
 }
@@ -99,7 +100,7 @@ const SingleCoachCard: React.FC<SingleCardProps> = ({ item }: any) => {
           </div>
           <div className="w-full">
             <Link
-              to={`https://mylang-coach.vercel.app//view-coach/${id}`}
+              to={`${appUrl}/view-coach/${id}`}
               target="_blank"
               className={`flex  justify-center dm-sans text-xs font-medium h-8  items-center hover:bg-[#0E79FF] transition duration-500  bg-black rounded-[4px] text-white px-3 w-fit min-w-full`}
             >

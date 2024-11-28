@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import {Link} from "react-router-dom";
 import logo from "../../assets/icons/lang-logo.svg";
 import { Bars, CloseIcon } from "../../assets/website-icons";
+import { appUrl } from "../../util/endpoints";
 
 
 
@@ -58,7 +59,7 @@ const MobileNav = () => {
               <span>
                 <Link
                   to={"#coaches"}
-                  className="red-hat font-semibold text-base "
+                  className="red-hat font-semibold text-base"
                 >
                   Become a coach
                 </Link>
@@ -72,7 +73,7 @@ const MobileNav = () => {
                   Book a coach
                 </Link>
                 <Link
-                  to={"https://mylang-coach.vercel.app/login"}
+                  to={`${appUrl}/login`}
                   className="h-[41px] rounded-[4px] bg-[#464646] text-white px-6 font-medium red-hat "
                 >
                   Login
