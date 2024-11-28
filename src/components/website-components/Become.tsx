@@ -3,6 +3,7 @@
 import ContainerLayout from "../../layouts/ContainerLayout";
 import woman from "../../assets/png/become-girl.png";
 import { Link } from "react-router-dom";
+import { appUrl } from "../../util/endpoints";
 const Become = () => {
   return (
     <div className="w-full bg-white py-16 xl:py-[100px]">
@@ -37,8 +38,9 @@ const Become = () => {
             </ul>
             <span>
               <Link
-                to={"https://mylang-coach.vercel.app/register"}
+                to={`${appUrl}/register`}
                 target="_blank"
+                
                 className="px-6 h-[37px] rounded-[4px] bg-black text-white flex items-center justify-center text-sm font-medium red-hat mt-12 w-fit"
               >
                 Become a coach

@@ -1,7 +1,9 @@
 import React from 'react'
 import ContainerLayout from '../../layouts/ContainerLayout'
 import manPics from "../../assets/png/man-pics.png"
+import { useNavigate } from 'react-router-dom';
 const Stats = () => {
+    const navigate = useNavigate();
   return (
     <div className="w-full mt-[100px] bg-[#F0F5FC] py-12 rounded-[8px] ">
       <ContainerLayout>
@@ -24,7 +26,7 @@ const Stats = () => {
               online language learning platform worldwide. Read more
             </p>
             <div className="w-full items-center flex gap-3 mt-12  ">
-              <button className="h-[41px] rounded-[4px] bg-primary text-white px-6 font-normal red-hat  hover:bg-[#0E60FF] transition-all ease-in-out  hover:scale-105 border-[2px] border-[#394EF1]">
+              <button className="h-[41px] rounded-[4px] bg-primary text-white px-6 font-normal red-hat  hover:bg-[#0E60FF] transition-all ease-in-out  hover:scale-105 border-[2px] border-[#394EF1]" onClick={() => navigate("/all-coaches")}>
                 Book a coach
               </button>
               <button className="h-[41px] rounded-[4px] bg-[#464646] text-white px-6 font-normal red-hat hover:bg-[#353434] transition-all ease-in-out  red-hat hover:scale-105 border-[2px] border-black ">

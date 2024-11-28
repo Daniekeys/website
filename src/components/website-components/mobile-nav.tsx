@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import {Link} from "react-router-dom";
 import logo from "../../assets/icons/lang-logo.svg";
 import { Bars, CloseIcon } from "../../assets/website-icons";
+import { appUrl } from "../../util/endpoints";
 
 
 
@@ -41,7 +42,7 @@ const MobileNav = () => {
             <div className="flex flex-col w-full px-4 mt-[45px] gap-6">
               <span>
                 <Link
-                  to={"#coaches"}
+                  to={"/all-coaches"}
                   className="red-hat font-semibold text-base "
                 >
                   Find Coaches
@@ -58,7 +59,7 @@ const MobileNav = () => {
               <span>
                 <Link
                   to={"#coaches"}
-                  className="red-hat font-semibold text-base "
+                  className="red-hat font-semibold text-base"
                 >
                   Become a coach
                 </Link>
@@ -71,9 +72,12 @@ const MobileNav = () => {
                 >
                   Book a coach
                 </Link>
-                <button className="h-[41px] rounded-[4px] bg-[#464646] text-white px-6 font-medium red-hat ">
-                  Learn more
-                </button>
+                <Link
+                  to={`${appUrl}/login`}
+                  className="h-[41px] rounded-[4px] bg-[#464646] text-white px-6 font-medium red-hat "
+                >
+                  Login
+                </Link>
               </div>
             </div>
           </div>
