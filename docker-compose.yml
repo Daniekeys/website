@@ -1,0 +1,7 @@
+services:
+  website:
+    build: .
+    ports:
+      - "10000:10000"
+    env_file:
+      - .env
