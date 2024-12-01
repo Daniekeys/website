@@ -28,7 +28,7 @@ const SingleCoachCard: React.FC<SingleCardProps> = ({ item }: any) => {
         src={item?.profileImage ?? pic}
         alt=""
         className="lg:w-full  h-[200px] rounded-t-[8px] object-cover cursor-pointer"
-        onClick={() => navigate(`/view-coach/${id}`)}
+       
       />
       <div className="w-full px-4 py-3 flex flex-col">
         <div className="flex gap-3 items-center">

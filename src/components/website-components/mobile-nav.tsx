@@ -58,7 +58,8 @@ const MobileNav = () => {
               </span>
               <span>
                 <Link
-                  to={"#coaches"}
+                  to={`${appUrl}/register`}
+                  target="_blank"
                   className="red-hat font-semibold text-base"
                 >
                   Become a coach

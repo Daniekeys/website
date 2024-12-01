@@ -2,6 +2,7 @@ import React from 'react'
 import ContainerLayout from '../../layouts/ContainerLayout'
 import whiteLogo from "../../assets/svg/white-logo.svg"
 import { Link } from 'react-router-dom';
+import { appUrl } from '../../util/endpoints';
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
@@ -69,7 +70,7 @@ const Footer = () => {
               </Link>
               <Link
                 to={"https://www.linkedin.com/company/mylangcoach"}
-                target='_blank'
+                target="_blank"
                 className="mt-6 text-[#E0E0E0] dm-sans "
               >
                 Linkedin
@@ -83,7 +84,11 @@ const Footer = () => {
               </h3>
 
               <p className="mt-6 text-[#E0E0E0] dm-sans ">About Us</p>
-              <Link to={"#"} className="mt-6 text-[#E0E0E0] dm-sans ">
+              <Link
+                to={`${appUrl}/register`}
+                target="_blank"
+                className="mt-6 text-[#E0E0E0] dm-sans "
+              >
                 Become a coach
               </Link>
               <Link to={"#"} className="mt-6 text-[#E0E0E0] dm-sans ">
