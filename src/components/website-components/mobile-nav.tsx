@@ -75,7 +75,7 @@ const MobileNav = () => {
                 </Link>
                 <Link
                   to={`${appUrl}/login`}
-                  className="h-[41px] rounded-[4px] bg-[#464646] text-white px-6 font-medium red-hat "
+                  className="h-[41px] flex items-center justify-center rounded-[4px] bg-[#464646] text-white px-6 font-medium red-hat "
                 >
                   Login
                 </Link>

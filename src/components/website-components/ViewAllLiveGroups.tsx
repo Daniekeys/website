@@ -22,7 +22,7 @@ const ViewAllLiveGroups = () => {
             window.scrollTo(0,0)
         }, []);
   return (
-    <div className="w-full mt-28 bg-white">
+    <div className="w-full mt-28 bg-white mb-12">
       <ContainerLayout>
         <div className="w-full flex flex-col">
           <h1 className="2xl:text-[40px] md:text-3xl text-2xl font-bold red-hat 2xl:leading-[48px]  ">
