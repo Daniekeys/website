@@ -1,12 +1,12 @@
 import {useEffect, useState} from 'react'
 import Navbar from './Navbar';
 import ContainerLayout from '../../layouts/ContainerLayout';
-const langs = ["Yoruba", "English", "Spanish", "Hausa", "Igbo", "Chinese"];
 import woman from "../../assets/png/hero-woman.png";
 import globe from "../../assets/icons/globe.svg";
 import lang from "../../assets/icons/lang-icon.svg";
 import PrimarySelect from '../Selects/PrimarySelect';
 import { useNavigate } from 'react-router-dom';
+const langs = ["Yoruba", "English", "Spanish", "Hausa", "Igbo", "Chinese"];
 const langData = [
   { name: "English", value: "English" },
   { name: "Spanish", value: "Spanish" },

@@ -7,8 +7,8 @@ import App from "./App";
 import { persistor, store } from "./app/store";
 import "./index.css";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
-
-
+import { initializeAnalytics,logPageView } from "./util/analytics";
+initializeAnalytics();
 const container = document.getElementById("root");
 
 if (!container) throw new Error("Could not find root element with id 'root'");

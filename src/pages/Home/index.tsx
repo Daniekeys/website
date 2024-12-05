@@ -10,10 +10,16 @@ import Learners from '../../components/website-components/Learners'
 import Navbar from '../../components/website-components/Navbar'
 import Hero from '../../components/website-components/Hero'
 import MobileNav from '../../components/website-components/mobile-nav'
+import { useLocation } from 'react-router-dom'
+import { logPageView } from '../../util/analytics'
 
 const Home = () => {
     const [active, setActive] = useState<boolean>(false);
+ const location = useLocation();
 
+ useEffect(() => {
+   logPageView();
+ }, [location]);
     useEffect(() => {
       if (typeof window) {
         const handleScroll = () => {

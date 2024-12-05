@@ -7,7 +7,7 @@ import { appUrl } from '../../util/endpoints';
 const Navbar = ({ active }: { active: boolean }) => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  console.log(active)
+ 
   return (
     <div
       className={` hidden lg:flex w-full rounded-t-[8px]  py-6  ${
