@@ -37,6 +37,7 @@ import { websiteUrl } from "../../util/endpoints";
 const LiveOfferingCard = ({ item }: { item: ClassDetails }) => {
 
     const url = `${websiteUrl}/view-livegroup?slugURL=${item?.slug}`;
+  
     const text = "Check out this awesome page!";
 
     const handleShare = (shareUrl: string) => {
@@ -147,14 +148,19 @@ useEffect(() => {
         alt=""
         className=" rounded-t-[8px] r w-full h-[240px] object-cover "
         onClick={() => {
-          if (item?.type === "LIVE_GROUP") {
-            setOpenLive(true);
-          }
+          window.open(url, "_blank", "noopener,noreferrer");
         }}
       />
 
       <div className="flex flex-col p-[18px] bg-white ">
-        <h1 className="font-bold text-xl red-hat capitalize">{item?.title}</h1>
+        <h1
+          className="font-bold text-xl red-hat capitalize"
+          onClick={() => {
+            window.open(url, "_blank", "noopener,noreferrer");
+          }}
+        >
+          {item?.title}
+        </h1>
         <div className="flex gap-3 items-center mt-2">
           <span>
             <img
