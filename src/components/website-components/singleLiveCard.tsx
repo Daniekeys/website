@@ -36,7 +36,7 @@ import { IoCopyOutline } from "react-icons/io5";
 import { websiteUrl } from "../../util/endpoints";
 const LiveOfferingCard = ({ item }: { item: ClassDetails }) => {
 
-    const url = `${websiteUrl}view-livegroup?slugURL=${item?.slug}`;
+    const url = `${websiteUrl}/view-livegroup?slugURL=${item?.slug}`;
   
     const text = "Check out this awesome page!";
 
