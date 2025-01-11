@@ -27,7 +27,7 @@ const SingleCoachCard: React.FC<SingleCardProps> = ({ item }: any) => {
       <img
         src={item?.profileImage ?? pic}
         alt=""
-        className="lg:w-full  h-[200px] rounded-t-[8px] object-cover cursor-pointer"
+        className="lg:w-full  h-[400px] lg:h-[300px] rounded-t-[8px] object-cover cursor-pointer object-center"
        
       />
       <div className="w-full px-4 py-3 flex flex-col">
