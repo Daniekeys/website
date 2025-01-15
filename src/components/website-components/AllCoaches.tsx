@@ -94,7 +94,7 @@ const AllCoaches = () => {
         );
       }
   return (
-    <div className='w-full mt-24 mb-24'>
+    <div className="w-full mt-24 mb-24">
       <ContainerLayout>
         <div className="w-full flex flex-col py-6 lg:px-12 px-4 gap-12  ">
           <div className="w-full flex items-center justify-between">
@@ -103,21 +103,23 @@ const AllCoaches = () => {
                 <span>
                   <SearchIconA />
                 </span>
-                <input type="text" className="flex-grow border-none outline-none" value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search for a coach"
+                <input
+                  type="text"
+                  className="flex-grow border-none outline-none"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  placeholder="Enter price per hour, language or coach name."
                 />
               </div>
               <span>
                 <SearchFilter />
               </span>
             </div>
-            <span>
-             
-            </span>
+            <span></span>
           </div>
           <div className="flex flex-col gap-6 ">
             <h1 className="text-base  md:text-xl text-black font-bold red-hat">
-              Based on your language preference
+              Search by price per hour, language or coach name.
             </h1>
             <div className="w-full grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
               {searchResults?.map((item: any, index: any) => {

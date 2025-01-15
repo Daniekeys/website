@@ -27,14 +27,17 @@ const SingleCoachCard: React.FC<SingleCardProps> = ({ item }: any) => {
       <img
         src={item?.profileImage ?? pic}
         alt=""
-        className="lg:w-full  h-[400px] lg:h-[300px] rounded-t-[8px] object-cover cursor-pointer object-center"
-       
+        className="lg:w-full  h-[400px] lg:h-[300px] rounded-t-[8px] object-cover  object-center"
       />
       <div className="w-full px-4 py-3 flex flex-col">
         <div className="flex gap-3 items-center">
-          <h1 className="text-base lg:text-xl font-bold red-hat capitalize truncate">
+          <Link
+            to={`${appUrl}/view-coach/${id}`}
+            target="_blank"
+            className="text-base lg:text-xl font-bold red-hat capitalize truncate hover:text-primary cursor-pointer"
+          >
             {firstName} {lastName}
-          </h1>
+          </Link>
           {/* <img src={ar} alt="ar" /> */}
           <span>
             <VerifyIcon />
