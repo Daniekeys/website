@@ -80,7 +80,7 @@ const AllCoaches = () => {
     setSearchResults( searchResult);
   }
 
-  }, [searchTerm])
+  }, [searchTerm, auth?.allCoaches]);
   
   
       if (auth?.loading) {
